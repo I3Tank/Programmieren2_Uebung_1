@@ -47,5 +47,17 @@ public class AppTest {
         boolean actual = password.checkNoOtherSymbols();
         assertTrue(actual);
     }
+    @Test
+    public void checkAscendingNumbersTest(){
+        myPassword password = new myPassword("ValidSymbolsPassword1245");
+        boolean actual = password.checkAscendingNumbers();
+        assertTrue(actual);
+    }
+    @Test
+    public void checkChainOfNumbersTest(){
+        myPassword password = new myPassword("ValidSymbolsPassword11121");
+        boolean actual = password.checkChainOfNumbers();
+        assertTrue(actual);
+    }
 
 }

@@ -49,7 +49,7 @@ public class myPassword {
 
     public boolean checkNoOtherSymbols(){
         for (int i = 0; i < password.length(); i++) {
-            if (password.matches(".*[/*^&\"{}_\\[\\]|\\<>,.].*")){
+            if (password.matches(".*[/*^&\"{}_\\[\\]|<>,.\\\\].*")){
                 return false;
             }
         }
