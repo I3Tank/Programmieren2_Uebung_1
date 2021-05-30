@@ -13,13 +13,13 @@ public class AppTest {
     Numbers needed
     ()#$?!%/@ needed
     cant have other special symbols
-
-
      */
+
+
     @Test
     public void checkLengthTest(){
         myPassword password = new myPassword("validLengthPassword");
-        boolean actual = password.checkPasswordLength(password);
+        boolean actual = password.checkPasswordLength();
         assertTrue(actual);
     }
 }
