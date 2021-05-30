@@ -9,7 +9,7 @@ public class myPassword {
     }
 
     public boolean checkPasswordLength(){
-        return password.length() > 8 && 25 > password.length();
+        return password.length() >= 8 && 25 >= password.length();
     }
 
     public boolean checkUpperLower(){
@@ -54,5 +54,28 @@ public class myPassword {
             }
         }
         return true;
+    }
+
+    public boolean checkChainOfNumbers(){
+        int count = 1;
+        char lastChar = password.charAt(0);
+
+        for (int i = 0; i < password.length(); i++) {
+            if (password.charAt(i) == lastChar && Character.isDigit(password.charAt(i))){
+                count++;
+            }
+            else{
+                lastChar = password.charAt(i);
+                count = 1;
+            }
+            if(count <= 4){
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public boolean checkAscendingNumbers(){
+        return false;
     }
 }
