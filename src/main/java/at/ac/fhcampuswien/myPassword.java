@@ -80,15 +80,23 @@ public class myPassword {
 
     public boolean checkAscendingNumbers(){
         int count = 0;
-        int lastDigit;
-
+        char lastChar = password.charAt(0);
+        char charToCheck;
 
         for (int i = 0; i < password.length(); i++) {
-//            if(password.charAt(i)){
-//
-//            }
-        }
+            charToCheck = password.charAt(i);
+            if(Character.isDigit(charToCheck) && charToCheck == lastChar + 1){
+                count++;
+            }
+            else{
+                count = 1;
+            }
+            lastChar = charToCheck;
 
-        return false;
+            if(count >= 3){
+                return false;
+            }
+        }
+        return true;
     }
 }

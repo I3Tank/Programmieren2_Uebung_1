@@ -49,13 +49,13 @@ public class AppTest {
     }
     @Test
     public void checkAscendingNumbersTest(){
-        myPassword password = new myPassword("ValidSymbolsPassword1245");
+        myPassword password = new myPassword("ValidAscendPassword1245");
         boolean actual = password.checkAscendingNumbers();
         assertTrue(actual);
     }
     @Test
     public void checkChainOfNumbersTest(){
-        myPassword password = new myPassword("1222111");
+        myPassword password = new myPassword("ValidChainPassword111");
         boolean actual = password.checkChainOfNumbers();
         assertTrue(actual);
     }
