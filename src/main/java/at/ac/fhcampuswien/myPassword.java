@@ -8,6 +8,7 @@ public class myPassword {
         this.password = password;
     }
 
+
     public boolean checkPasswordLength(){
         return password.length() >= 8 && 25 >= password.length();
     }
