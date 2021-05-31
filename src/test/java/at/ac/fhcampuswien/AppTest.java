@@ -13,58 +13,58 @@ public class AppTest {
     cant have other special symbols
      */
     @Test
-    @DisplayName("Password has valid length.")
+    @DisplayName("Password has valid length of 8-25 characters.")
     public void checkLengthTest(){
-        myPassword password = new myPassword("validLengthPassword");
-        boolean actual = password.checkPasswordLength();
+        MyPasswordValidator password = new MyPasswordValidator();
+        boolean actual = password.checkPasswordLength("validLengthPassword");
         assertTrue(actual);
     }
 
     @Test
     @DisplayName("Password has minimum of one lowercase and one uppercase letter.")
     public void checkUpperLowerTest(){
-        myPassword password = new myPassword("ValidUpperLowerPassword");
-        boolean actual = password.checkUpperLower();
+        MyPasswordValidator password = new MyPasswordValidator();
+        boolean actual = password.checkUpperLower("ValidUpperLowerPassword");
         assertTrue(actual);
     }
 
     @Test
     @DisplayName("Password has minimum of one number.")
     public void checkNumberTest_singleNumber(){
-        myPassword password = new myPassword("ValidNumberPassword1");
-        boolean actual = password.checkNumber();
+        MyPasswordValidator password = new MyPasswordValidator();
+        boolean actual = password.checkNumber("ValidNumberPassword1");
         assertTrue(actual);
     }
 
     @Test
     @DisplayName("Password has minimum of one special Symbol.")
     public void specialSymbolsNeededTest(){
-        myPassword password = new myPassword("ValidSymbolsPassword$");
-        boolean actual = password.checkSymbolsNeeded();
+        MyPasswordValidator password = new MyPasswordValidator();
+        boolean actual = password.checkSymbolsNeeded("ValidSymbolsPassword$");
         assertTrue(actual);
     }
 
     @Test
     @DisplayName("Password has no invalid symbols.")
     public void checkNoOtherSymbolsTest(){
-        myPassword password = new myPassword("ValidSymbolsPassword$!");
-        boolean actual = password.checkNoOtherSymbols();
+        MyPasswordValidator password = new MyPasswordValidator();
+        boolean actual = password.checkNoOtherSymbols("ValidSymbolsPassword$!");
         assertTrue(actual);
     }
 
     @Test
     @DisplayName("Password has no more than 2 ascending numbers in a row.")
     public void checkAscendingNumbersTest(){
-        myPassword password = new myPassword("ValidAscendPassword1245");
-        boolean actual = password.checkAscendingNumbers();
+        MyPasswordValidator password = new MyPasswordValidator();
+        boolean actual = password.checkAscendingNumbers("ValidAscendPassword1245");
         assertTrue(actual);
     }
 
     @Test
     @DisplayName("Password has no more than 4 of the same number in a row.")
     public void checkChainOfNumbersTest(){
-        myPassword password = new myPassword("ValidChainPassword111");
-        boolean actual = password.checkChainOfNumbers();
+        MyPasswordValidator password = new MyPasswordValidator();
+        boolean actual = password.checkChainOfNumbers("ValidChainPassword111");
         assertTrue(actual);
     }
 }

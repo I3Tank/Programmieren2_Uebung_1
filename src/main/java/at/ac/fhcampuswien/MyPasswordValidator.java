@@ -1,19 +1,24 @@
 package at.ac.fhcampuswien;
 import java.lang.*;
 
-public class myPassword {
-    private final String password;
+public class MyPasswordValidator {
 
-    public myPassword(String password){
-        this.password = password;
+    //Da gibt's doch sicher eine bessere Lösung dazu oder? ^^'
+    public boolean checkPassword(String password){
+        return checkPasswordLength(password)
+                && checkUpperLower(password)
+                && checkNumber(password)
+                && checkSymbolsNeeded(password)
+                && checkNoOtherSymbols(password)
+                && checkChainOfNumbers(password)
+                && checkAscendingNumbers(password);
     }
 
-
-    public boolean checkPasswordLength(){
+    public boolean checkPasswordLength(String password){
         return password.length() >= 8 && 25 >= password.length();
     }
 
-    public boolean checkUpperLower(){
+    public boolean checkUpperLower(String password){
         boolean hasUpper = false;
         boolean hasLower = false;
         for (int i = 0; i < password.length(); i++) {
@@ -30,7 +35,7 @@ public class myPassword {
         return false;
     }
 
-    public boolean checkNumber(){
+    public boolean checkNumber(String password){
         for (int i = 0; i < password.length(); i++) {
             if (Character.isDigit(password.charAt(i))){
                 return true;
@@ -39,7 +44,7 @@ public class myPassword {
         return false;
     }
 
-    public boolean checkSymbolsNeeded(){
+    public boolean checkSymbolsNeeded(String password){
         for (int i = 0; i < password.length(); i++) {
             if (password.matches(".*[()#$?!%/@].*")){
                 return true;
@@ -48,7 +53,7 @@ public class myPassword {
         return false;
     }
 
-    public boolean checkNoOtherSymbols(){
+    public boolean checkNoOtherSymbols(String password){
         for (int i = 0; i < password.length(); i++) {
             if (password.matches(".*[/*^&\"{}_\\[\\]|<>,.\\\\].*")){
                 return false;
@@ -57,7 +62,7 @@ public class myPassword {
         return true;
     }
 
-    public boolean checkChainOfNumbers(){
+    public boolean checkChainOfNumbers(String password){
         int count = 0;
         char lastChar = password.charAt(0);
         char charToCheck;
@@ -79,7 +84,7 @@ public class myPassword {
         return true;
     }
 
-    public boolean checkAscendingNumbers(){
+    public boolean checkAscendingNumbers(String password){
         int count = 0;
         char lastChar = password.charAt(0);
         char charToCheck;
