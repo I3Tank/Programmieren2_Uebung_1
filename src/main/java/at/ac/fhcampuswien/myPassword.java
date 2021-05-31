@@ -57,18 +57,21 @@ public class myPassword {
     }
 
     public boolean checkChainOfNumbers(){
-        int count = 1;
+        int count = 0;
         char lastChar = password.charAt(0);
+        char charToCheck;
 
         for (int i = 0; i < password.length(); i++) {
-            if (password.charAt(i) == lastChar && Character.isDigit(password.charAt(i))){
+            charToCheck = password.charAt(i);
+
+            if (charToCheck == lastChar && Character.isDigit(charToCheck)){
                 count++;
             }
             else{
-                lastChar = password.charAt(i);
+                lastChar = charToCheck;
                 count = 1;
             }
-            if(count <= 4){
+            if(count >= 4){
                 return false;
             }
         }
@@ -76,6 +79,16 @@ public class myPassword {
     }
 
     public boolean checkAscendingNumbers(){
+        int count = 0;
+        int lastDigit;
+
+
+        for (int i = 0; i < password.length(); i++) {
+//            if(password.charAt(i)){
+//
+//            }
+        }
+
         return false;
     }
 }

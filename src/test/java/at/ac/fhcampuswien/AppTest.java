@@ -55,7 +55,7 @@ public class AppTest {
     }
     @Test
     public void checkChainOfNumbersTest(){
-        myPassword password = new myPassword("ValidSymbolsPassword11121");
+        myPassword password = new myPassword("1222111");
         boolean actual = password.checkChainOfNumbers();
         assertTrue(actual);
     }
