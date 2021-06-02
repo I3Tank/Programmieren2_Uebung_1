@@ -12,9 +12,11 @@ public class AppTest {
     ()#$?!%/@ needed
     cant have other special symbols
      */
+
+    //Test with assertFalse()
     @Test
     @DisplayName("Password has valid length of 8-25 characters.")
-    public void checkLengthTest(){
+    public void checkPasswordLengthTest(){
         MyPasswordValidator password = new MyPasswordValidator();
         boolean actual = password.checkPasswordLength("validLengthPassword");
         assertTrue(actual);
